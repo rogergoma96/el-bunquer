@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Meta from "../components/common/meta/meta";
+import Meta from "../components/common/Meta/Meta";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
