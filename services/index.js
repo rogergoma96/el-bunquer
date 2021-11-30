@@ -1,5 +1,5 @@
 export const getMenuSections = async () => {
-  const response = await fetch("/api/menu/")
+  const response = await fetch("http://localhost:3000/api/menu/")
     .then((res) => {
       return res.json();
     })
@@ -9,7 +9,7 @@ export const getMenuSections = async () => {
 };
 
 export const getLastEpisodes = async () => {
-  const response = await fetch("/api/last-episodes/")
+  const response = await fetch("http://localhost:3000/api/last-episodes/")
     .then((res) => {
       return res.json();
     })
@@ -19,7 +19,7 @@ export const getLastEpisodes = async () => {
 };
 
 export const getAllEpisodes = async () => {
-  const response = await fetch("/api/episodes/")
+  const response = await fetch("http://localhost:3000/api/episodes/")
     .then((res) => {
       return res.json();
     })
@@ -29,7 +29,9 @@ export const getAllEpisodes = async () => {
 };
 
 export const getEpisodeDetail = async (episodeId, season) => {
-  const response = await fetch(`/api/episodes/${season}/${episodeId}`)
+  const response = await fetch(
+    `http://localhost:3000/api/episodes/${season}/${episodeId}`
+  )
     .then((res) => {
       return res.json();
     })
