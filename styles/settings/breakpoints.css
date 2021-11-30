@@ -1,0 +1,7 @@
+:root {
+  --breakpoint-dsk-l: 1920px;
+  --breakpoint-dsk-m: 1200px;
+  --breakpoint-dsk-s: 1024px;
+  --breakpoint-tbl: 768px;
+  --breakpoint-mbl: 480px;
+}

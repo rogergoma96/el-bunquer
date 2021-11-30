@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: var(--color-red);
+  padding-top: 64px;
+  max-height: 100vh;
+}
+
+.image {
+  height: calc(100vh - 64px);
+  width: 100%;
+  display: block;
+  position: relative;
+  max-width: 1780px;
+}
+
+@media (max-width: 500px) {
+  .image {
+    height: calc(50vh - 64px);
+  }
+}

@@ -1,0 +1,39 @@
+@font-face {
+  font-display: fallback;
+  font-family: "NunitoSans";
+  src: url("/fonts/NunitoSans-Bold.woff2") format("woff2"),
+    url("/fonts/NunitoSans-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: "NunitoSans";
+  src: url("/fonts/NunitoSans-Regular.woff2") format("woff2"),
+    url("/fonts/NunitoSans-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: "CormorantGaramond";
+  src: url("/fonts/CormorantGaramond-Bold.woff2") format("woff2"),
+    url("/fonts/CormorantGaramond-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: "CormorantGaramond";
+  src: url("/fonts/CormorantGaramond-Medium.woff2") format("woff2"),
+    url("/fonts/CormorantGaramond-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}

@@ -1,0 +1,43 @@
+.link {
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.image {
+  width: 100%;
+  transition: 0.3s;
+  display: initial;
+  margin: 0;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 0;
+}
+
+.tag {
+  text-transform: uppercase;
+}
+
+.title {
+  padding-right: 16px;
+}
+
+@media (max-width: 1200px) {
+  .link {
+    min-width: calc(100vw / 3);
+  }
+}
+
+@media (max-width: 800px) {
+  .link {
+    min-width: calc(100vw / 2);
+  }
+}
+
+

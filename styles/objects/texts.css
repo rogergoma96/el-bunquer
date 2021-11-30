@@ -1,0 +1,112 @@
+.text-title-xxl {
+  font-family: var(--font-family-nunito-sans);
+  font-size: var(--font-size-dsk-title-xxl);
+  font-weight: var(--font-regular);
+  line-height: var(--line-height-dsk-title-xxl);
+}
+
+.text-title-xl {
+  font-family: var(--font-family-nunito-sans);
+  font-size: var(--font-size-dsk-title-xl);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-dsk-title-xl);
+}
+
+.text-title-l {
+  font-family: var(--font-family-nunito-sans);
+  font-size: var(--font-size-dsk-title-l);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-dsk-title-l);
+}
+
+.text-title-m {
+  font-family: var(--font-family-nunito-sans);
+  font-size: var(--font-size-dsk-title-m);
+  font-weight: var(--font-regular);
+  line-height: var(--line-height-dsk-title-m);
+}
+
+.text-title-s {
+  font-family: var(--font-family-nunito-sans);
+  font-size: var(--font-size-dsk-title-s);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-dsk-title-s);
+}
+
+.text-subtitle {
+  font-family: var(--font-family-nunito-sans);
+  font-size: var(--font-size-dsk-subtitle);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-dsk-subtitle);
+}
+
+.text-body {
+  font-family: var(--font-family-nunito-sans);
+  font-size: var(--font-size-dsk-body);
+  font-weight: var(--font-regular);
+  line-height: var(--line-height-dsk-body);
+  letter-spacing: var(--letter-spacing-s);
+}
+
+.text-action {
+  font-family: var(--font-family-nunito-sans);
+  font-size: var(--font-size-dsk-action);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-dsk-action);
+}
+
+.text-caption {
+  font-family: var(--font-family-nunito-sans);
+  font-size: var(--font-size-dsk-caption);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-dsk-caption);
+}
+
+@media (max-width: 480px) {
+  .text-title-xxl {
+    font-size: var(--font-size-mbl-title-xxl);
+    line-height: var(--line-height-mbl-title-xxl);
+  }
+
+  .text-title-xl {
+    font-size: var(--font-size-mbl-title-xl);
+    line-height: var(--line-height-mbl-title-xl);
+  }
+
+  .text-title-l {
+    font-size: var(--font-size-mbl-title-l);
+    line-height: var(--line-height-mbl-title-l);
+  }
+
+  .text-title-m {
+    font-weight: var(--font-bold);
+    font-size: var(--font-size-mbl-title-m);
+    line-height: var(--line-height-mbl-title-m);
+  }
+
+  .text-title-s {
+    font-size: var(--font-size-mbl-title-s);
+    line-height: var(--line-height-mbl-title-s);
+  }
+
+  .text-subtitle {
+    font-size: var(--font-size-mbl-subtitle);
+    line-height: var(--line-height-mbl-subtitle);
+  }
+
+  .text-body {
+    font-size: var(--font-size-mbl-body);
+    line-height: var(--line-height-mbl-body);
+  }
+
+  .text-action {
+    font-size: var(--font-size-mbl-action);
+    line-height: var(--line-height-mbl-action);
+  }
+
+  .text-caption {
+    font-size: var(--font-size-mbl-caption);
+    line-height: var(--line-height-mbl-caption);
+  }
+}
+

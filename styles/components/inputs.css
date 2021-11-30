@@ -1,0 +1,21 @@
+.input {
+  border: none;
+  border-bottom: 1px solid var(--color-gray-600);
+  padding: 8px;
+  color: var(--color-black);
+  font-family: var(--font-family-nunito-sans);
+  font-size: 14px;
+  font-weight: var(--font-regular);
+  line-height: 21px;
+  max-width: calc(350px - 16px);
+  width: calc(100% - 16px);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-black);
+}
+
+.input::placeholder {
+  color: var(--color-gray-600);
+}

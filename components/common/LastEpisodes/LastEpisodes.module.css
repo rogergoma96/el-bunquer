@@ -1,0 +1,28 @@
+.container {
+  margin: 0;
+}
+
+.title {
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+  padding-left: 64px;
+}
+
+.episodes {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding: 0 64px;
+  overflow: auto;
+}
+
+.episodes::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .title,
+  .episodes {
+    padding: 0 16px;
+  }
+}

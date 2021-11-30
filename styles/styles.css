@@ -1,0 +1,17 @@
+@import './tools/index.css';
+@import './settings/index.css';
+@import './objects/index.css';
+@import './components/index.css';
+
+body {
+  margin: auto;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}

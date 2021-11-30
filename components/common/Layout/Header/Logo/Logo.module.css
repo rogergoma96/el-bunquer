@@ -1,0 +1,6 @@
+.logo {
+  position: relative;
+  width: auto;
+  cursor: pointer;
+  display: flex;
+}

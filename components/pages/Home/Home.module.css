@@ -1,0 +1,18 @@
+.content {
+  padding: 128px 0;
+  max-width: 1980px;
+  margin: auto;
+}
+
+@media (max-width: 800px) {
+  .content {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .content {
+    padding: 32px 0;
+  }
+}
+

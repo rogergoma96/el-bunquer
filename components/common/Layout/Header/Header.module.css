@@ -1,0 +1,28 @@
+.container {
+  align-items: stretch;
+  background-color: var(--color-red);
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 128px);
+  z-index: 100;
+  transition: ease-out 0.6s;
+  padding: 8px 64px;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .container {
+    padding: 8px 16px;
+    width: calc(100% - 32px);
+  }
+}

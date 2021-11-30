@@ -1,0 +1,50 @@
+.image {
+  margin-right: 64px;
+  width: 40%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin: 0 64px 128px;
+  justify-content: flex-end;
+}
+
+.texts {
+  text-align: justify;
+  min-width: 40%;
+}
+
+.strong {
+  margin-right: 8px;
+}
+
+.title {
+  margin: 0 0 16px;
+}
+
+@media (max-width: 1100px) {
+  .image {
+    width: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+    margin: 64px;
+  }
+
+  .texts {
+    margin: 32px 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    margin: 64px 16px;
+  }
+
+  .texts {
+    margin: 16px 0;
+  }
+}

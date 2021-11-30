@@ -1,0 +1,49 @@
+:root {
+  /* FONT SIZE */
+  --font-size-dsk-title-xxl: 72px;
+  --font-size-dsk-title-xl: 40px;
+  --font-size-dsk-title-l: 32px;
+  --font-size-dsk-title-m: 32px;
+  --font-size-dsk-title-s: 20px;
+  --font-size-mbl-title-xxl: 32px;
+  --font-size-mbl-title-xl: 32px;
+  --font-size-mbl-title-l: 28px;
+  --font-size-mbl-title-m: 24px;
+  --font-size-mbl-title-s: 18px;
+  --font-size-dsk-subtitle: 14px;
+  --font-size-mbl-subtitle: 16px;
+  --font-size-dsk-body: 16px;
+  --font-size-mbl-body: 14px;
+  --font-size-dsk-action: 16px;
+  --font-size-mbl-action: 14px;
+  --font-size-dsk-caption: 12px;
+  --font-size-mbl-caption: 12px;
+  --font-size-dsk-body-cormorant-garamond: 28px;
+  --font-size-mbl-body-cormorant-garamond: 12px;
+
+  /* LINE HEIGHT */
+  --line-height-dsk-title-xxl: 72px;
+  --line-height-dsk-title-xl: 48px;
+  --line-height-dsk-title-l: 36px;
+  --line-height-dsk-title-m: 32px;
+  --line-height-dsk-title-s: 32px;
+  --line-height-mbl-title-xxl: 48px;
+  --line-height-mbl-title-xl: 48px;
+  --line-height-mbl-title-l: 36px;
+  --line-height-mbl-title-m: 42px;
+  --line-height-mbl-title-s: 40px;
+  --line-height-dsk-subtitle: 32px;
+  --line-height-mbl-subtitle: 32px;
+  --line-height-dsk-body: 22px;
+  --line-height-mbl-body: 22px;
+  --line-height-dsk-action: 22px;
+  --line-height-mbl-action: 22px;
+  --line-height-dsk-caption: 18px;
+  --line-height-mbl-caption: 18px;
+  --line-height-dsk-body-cormorant-garamond: 36px;
+  --line-height-mbl-body-cormorant-garamond: 18px;
+
+  /* LETTER SPACING */
+  --letter-spacing-m: 1px;
+  --letter-spacing-s: 0.3px;
+}

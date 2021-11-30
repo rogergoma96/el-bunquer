@@ -1,0 +1,27 @@
+.sponsors {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 164px 0 0;
+  padding: 0 64px;
+}
+
+.sponsor {
+  max-height: 80px;
+  max-width: calc(100vw / 6);
+}
+
+@media (max-width: 800px) {
+  .sponsors {
+    margin: 64px 0 0;
+    padding: 0 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sponsor {
+    max-height: auto;
+    max-width: 40%;
+    padding: 16px;
+  }
+}
