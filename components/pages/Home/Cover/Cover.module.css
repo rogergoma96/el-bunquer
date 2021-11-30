@@ -17,6 +17,6 @@
 
 @media (max-width: 500px) {
   .image {
-    height: calc(50vh - 64px);
+    height: calc(40vh - 64px);
   }
 }
