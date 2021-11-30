@@ -1,4 +1,4 @@
-const episode = {
+export const episodeDetail = {
   id: "1",
   name: "Carlos Gesualdo",
   summary:
@@ -18,5 +18,5 @@ const episode = {
 };
 
 export default function handler(req, res) {
-  res.status(200).json(episode);
+  res.status(200).json(episodeDetail);
 }

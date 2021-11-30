@@ -1,4 +1,4 @@
-const menuSections = [
+export const menuSections = [
   {
     title: "Episodis",
     href: "/temporades",

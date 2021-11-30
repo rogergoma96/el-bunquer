@@ -3,11 +3,15 @@ import Head from "next/head";
 import Layout from "../../../components/common/Layout/Layout";
 import EpisodeDetail from "../../../components/pages/EpisodeDetail/EpisodeDetail";
 
+import { menuSections } from "../../api/menu";
+import { lastEpisodes } from "../../api/last-episodes";
+import { episodeDetail } from "../../api/episodes/[season]/[episode]";
+
 import {
   getAllEpisodes,
-  getLastEpisodes,
-  getEpisodeDetail,
-  getMenuSections,
+  // getLastEpisodes,
+  // getEpisodeDetail,
+  // getMenuSections,
 } from "../../../services";
 
 const EpisodeDetailPage = ({ menuSections, episodeDetail, lastEpisodes }) => (
@@ -34,12 +38,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const menuSectionsPromise = getMenuSections();
+  /**
+   * const menuSectionsPromise = getMenuSections();
   const lastEpisodesPromise = getLastEpisodes();
   const episodeDetailPromise = getEpisodeDetail(params.episode, params.season);
   const menuSections = await menuSectionsPromise;
   const lastEpisodes = await lastEpisodesPromise;
   const episodeDetail = await episodeDetailPromise;
+  **/
 
   return {
     props: {

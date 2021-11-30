@@ -2,7 +2,9 @@ import Head from "next/head";
 import Layout from "../components/common/Layout/Layout";
 
 import Home from "../components/pages/Home/Home";
-import { getLastEpisodes, getMenuSections } from "../services";
+// import { getLastEpisodes, getMenuSections } from "../services";
+import { menuSections } from "./api/menu";
+import { lastEpisodes } from "./api/last-episodes";
 
 const HomePage = ({ menuSections, lastEpisodes }) => (
   <Layout menuSections={menuSections}>
@@ -15,10 +17,12 @@ const HomePage = ({ menuSections, lastEpisodes }) => (
 );
 
 export async function getStaticProps() {
-  const menuSectionsPromise = getMenuSections();
+  /**
+   * const menuSectionsPromise =  getMenuSections();
   const lastEpisodesPromise = getLastEpisodes();
   const menuSections = await menuSectionsPromise;
   const lastEpisodes = await lastEpisodesPromise;
+  **/
 
   return {
     props: {

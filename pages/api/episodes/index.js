@@ -1,4 +1,4 @@
-const episodes = [
+export const episodes = [
   {
     id: "1",
     title:

@@ -1,4 +1,4 @@
-const lastEpisodes = [
+export const lastEpisodes = [
   {
     id: "1",
     title:
