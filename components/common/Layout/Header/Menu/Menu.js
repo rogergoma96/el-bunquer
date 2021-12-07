@@ -1,9 +1,14 @@
 import Link from "next/link";
+import { isMobile } from "react-device-detect";
 
 import styles from "./Menu.module.css";
 
 const Menu = ({ sections }) => {
   if (!sections) {
+    return null;
+  }
+
+  if (isMobile) {
     return null;
   }
 

@@ -6,7 +6,7 @@ import Logo from "./Logo/Logo";
 import styles from "./Header.module.css";
 
 const Header = ({ menuSections }) => (
-  <header className={`${styles.container} ${styles.transparent}`}>
+  <header className={styles.container}>
     <Logo />
     <Menu sections={menuSections} />
   </header>
