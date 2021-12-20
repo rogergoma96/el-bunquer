@@ -1,3 +1,9 @@
+.icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .menu a {
   color: white;
   text-decoration: none;
@@ -6,11 +12,10 @@
 
 .section {
   display: flex;
-  height: 100%;
-  justify-content: center;
-  padding: 0 16px;
+  justify-content: flex-start;
   flex-direction: column;
   position: relative;
+  margin-bottom: 16px;
 }
 
 .menu a:hover {
@@ -19,27 +24,108 @@
 
 .sections {
   list-style-type: none;
-  margin: 0;
+  margin: 64px 32px;
   padding: 0;
-  height: 100%;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   display: flex;
-}
-
-.section:hover .subsections {
-  display: flex;
+  flex-direction: column;
 }
 
 .subsections {
-  display: none;
+  display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: var(--color-red);
-  padding: 8px 32px;
 }
 
 .subsection {
-  padding: 16px;
+  padding: 8px 16px;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -80vw;
+  height: 100vh;
+  background-color: var(--color-red);
+  width: 80vw;
+  max-width: 300px;
+  z-index: 101;
+  transition: right 0.5s ease-in-out;
+  overflow: auto;
+}
+
+.show {
+  right: 0;
+}
+
+.veil {
+  background-color: var(--transparency-black);
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}
+
+.showVeil {
+  animation-duration: 0.5s;
+  animation-name: fadeInVeil;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.hideVeil {
+  animation-duration: 0.5s;
+  animation-name: fadeOutVeil;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+@keyframes fadeInVeil {
+  0% {
+    top: 0;
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0;
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutVeil {
+  0% {
+    top: 0;
+    display: block;
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+    top: 0;
+    display: block;
+  }
+
+  100% {
+    display: none;
+    top: -100vh;
+    opacity: 0;
+  }
 }

@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import Layout from "../../components/common/Layout/Layout";
 import Season from "../../components/pages/Seasons/Season";
-// import { getMenuSections } from "../../services";
+
 import { menuSections } from "../api/menu";
 
 const Seasons = ({ menuSections }) => (

@@ -1,36 +1,62 @@
 import Link from "next/link";
-import { isMobile } from "react-device-detect";
+import { useState } from "react";
+import CloseIcon from "../../../Icons/CloseIcon/CloseIcon";
+
+import MenuIcon from "../../../Icons/MenuIcon/MenuIcon";
 
 import styles from "./Menu.module.css";
 
 const Menu = ({ sections }) => {
+  const [showMenu, setShowMenu] = useState(null);
+
   if (!sections) {
     return null;
   }
 
-  if (isMobile) {
-    return null;
-  }
-
   return (
-    <nav className={`text-action ${styles.menu}`}>
-      <ul className={styles.sections}>
-        {sections.map((section) => (
-          <li key={section.title} className={styles.section}>
-            <Link href={section.href}>{section.title}</Link>
-            {section.links && (
-              <div className={styles.subsections}>
-                {section.links.map((links) => (
-                  <Link key={links.title} href={links.href}>
-                    <a className={styles.subsection}>{links.title}</a>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <>
+      <button className={styles.icon} onClick={() => setShowMenu(!showMenu)}>
+        <MenuIcon />
+      </button>
+      <nav
+        className={`text-action ${styles.menu} ${
+          showMenu ? styles.show : styles.hide
+        }`}
+      >
+        <button className={styles.close} onClick={() => setShowMenu(!showMenu)}>
+          <CloseIcon />
+        </button>
+        <ul className={styles.sections}>
+          {sections.map((section) => (
+            <li key={section.title} className={styles.section}>
+              <Link href={section.href}>
+                <a className="text-title-s">{section.title}</a>
+              </Link>
+              {section.links && (
+                <div className={styles.subsections}>
+                  {section.links.map((links) => (
+                    <Link key={links.title} href={links.href}>
+                      <a className={styles.subsection}>{links.title}</a>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <div
+        role="button"
+        onClick={() => setShowMenu(!showMenu)}
+        className={`${styles.veil} ${
+          showMenu !== null
+            ? showMenu
+              ? styles.showVeil
+              : styles.hideVeil
+            : null
+        }`}
+      />
+    </>
   );
 };
 

@@ -13,12 +13,13 @@ const LastEpisodes = ({ lastEpisodes = [] }) => {
       <div className={styles.episodes}>
         {lastEpisodes.map((episode) => (
           <PreviewEpisode
-            key={episode.id}
-            title={episode.title}
-            coverImage={episode.coverImage}
-            tags={episode.tags}
-            season={episode.season}
-            url={episode.url}
+            key={episode.attributes?.title}
+            title={episode.attributes?.title}
+            coverImage={episode.attributes?.coverImg}
+            tags={episode.attributes?.tags}
+            season={episode.attributes?.season || 1}
+            url={episode.attributes?.canonicalUrl}
+            episodeNumber={episode.attributes?.programNumber}
           />
         ))}
       </div>

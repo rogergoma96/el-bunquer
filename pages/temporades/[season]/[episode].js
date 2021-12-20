@@ -1,18 +1,13 @@
 import Head from "next/head";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
 import Layout from "../../../components/common/Layout/Layout";
 import EpisodeDetail from "../../../components/pages/EpisodeDetail/EpisodeDetail";
 
 import { menuSections } from "../../api/menu";
-import { lastEpisodes } from "../../api/last-episodes";
-import { episodeDetail } from "../../api/episodes/[season]/[episode]";
-import { episodes } from "../../api/episodes";
-
-import // getAllEpisodes,
-// getLastEpisodes,
-// getEpisodeDetail,
-// getMenuSections,
-"../../../services";
+import { getLastEpisodes } from "../../api/last-episodes";
+import { getEpisodeDetail } from "../../api/episodes/[season]/[episode]";
+import { getAllEpisodes } from "../../api/episodes";
 
 const EpisodeDetailPage = ({ menuSections, episodeDetail, lastEpisodes }) => (
   <Layout menuSections={menuSections}>
@@ -25,33 +20,34 @@ const EpisodeDetailPage = ({ menuSections, episodeDetail, lastEpisodes }) => (
 );
 
 export async function getStaticPaths() {
-  // const allEpisodesPromise = getAllEpisodes();
-  // const allEpisodes = await allEpisodesPromise;
-  const allEpisodes = episodes;
+  const client = new ApolloClient({
+    uri: "https://el-bunquer-cms.herokuapp.com/graphql",
+    cache: new InMemoryCache(),
+  });
 
+  const allEpisodes = await getAllEpisodes({ client });
   const paths = allEpisodes.map((episode) => ({
-    params: { episode: episode.url, season: episode.season },
+    params: {
+      episode: episode.attributes.canonicalUrl,
+      season: episode.attributes?.season?.data.attributes?.season,
+    },
   }));
 
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
-  /**
-   * const menuSectionsPromise = getMenuSections();
-  const lastEpisodesPromise = getLastEpisodes();
-  const episodeDetailPromise = getEpisodeDetail(params.episode, params.season);
-  const menuSections = await menuSectionsPromise;
-  const lastEpisodes = await lastEpisodesPromise;
-  const episodeDetail = await episodeDetailPromise;
-  **/
+export async function getStaticProps({ params: { episode } }) {
+  const client = new ApolloClient({
+    uri: "https://el-bunquer-cms.herokuapp.com/graphql",
+    cache: new InMemoryCache(),
+  });
+  const episodeDetail = await getEpisodeDetail({ client, episode });
+  const lastEpisodes = await getLastEpisodes({ client });
 
   return {
     props: {
       lastEpisodes,
-      episodeDetail,
+      episodeDetail: episodeDetail[0].attributes,
       menuSections,
     },
   };
