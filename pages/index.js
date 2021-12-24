@@ -19,7 +19,7 @@ const HomePage = ({ menuSections, lastEpisodes }) => (
 
 export async function getStaticProps() {
   const client = new ApolloClient({
-    uri: "https://el-bunquer-cms.herokuapp.com//graphql",
+    uri: "https://el-bunquer-cms.herokuapp.com/graphql",
     cache: new InMemoryCache(),
   });
 
