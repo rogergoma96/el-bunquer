@@ -9,15 +9,24 @@ import { getLastEpisodes } from "../../api/last-episodes";
 import { getEpisodeDetail } from "../../api/episodes/[season]/[episode]";
 import { getAllEpisodes } from "../../api/episodes";
 
-const EpisodeDetailPage = ({ menuSections, episodeDetail, lastEpisodes }) => (
-  <Layout menuSections={menuSections}>
-    <Head>
-      <title>{episodeDetail.pageTitle}</title>
-      <meta name="description" content={episodeDetail.pageDescription} />
-    </Head>
-    <EpisodeDetail lastEpisodes={lastEpisodes} episodeDetail={episodeDetail} />
-  </Layout>
-);
+const EpisodeDetailPage = ({ menuSections, episodeDetail, lastEpisodes }) => {
+  if (!episodeDetail) {
+    return null;
+  }
+
+  return (
+    <Layout menuSections={menuSections}>
+      <Head>
+        <title>{episodeDetail.pageTitle}</title>
+        <meta name="description" content={episodeDetail.pageDescription} />
+      </Head>
+      <EpisodeDetail
+        lastEpisodes={lastEpisodes}
+        episodeDetail={episodeDetail}
+      />
+    </Layout>
+  );
+};
 
 export async function getStaticPaths() {
   const client = new ApolloClient({
