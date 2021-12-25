@@ -57,18 +57,29 @@
   margin-bottom: 16px;
 }
 
+.history p {
+  margin-bottom: 16px;
+}
+
 @media (max-width: 800px) {
   .article {
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 0 16px;
     margin-bottom: 48px;
   }
 
-  .protagonist {
-    display: none;
-  }
-
   .articleTitle {
     margin-bottom: 16px;
+  }
+
+  .protagonist {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+
+  .image {
+    width: 100vw;
+    max-width: calc(100vw - 32px);
   }
 }

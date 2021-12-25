@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
 import styles from "./History.module.css";
@@ -31,8 +32,9 @@ const History = ({ name, historyImage, history }) => {
           className={`text-body ${
             showHistory ? styles.showHistory : styles.hideHistory
           }`}
-          dangerouslySetInnerHTML={{ __html: history }}
-        ></div>
+        >
+          <ReactMarkdown>{history}</ReactMarkdown>
+        </div>
         {!showHistory && (
           <button
             className={`text-caption ${styles.showMore}`}
