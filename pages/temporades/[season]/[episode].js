@@ -29,11 +29,11 @@ export async function getStaticPaths() {
   const paths = allEpisodes.map((episode) => ({
     params: {
       episode: episode.attributes.canonicalUrl,
-      season: episode.attributes?.season?.data.attributes?.season,
+      season: episode.attributes?.season?.data?.attributes?.season || "0",
     },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params: { episode } }) {
@@ -50,6 +50,7 @@ export async function getStaticProps({ params: { episode } }) {
       episodeDetail: episodeDetail[0].attributes,
       menuSections,
     },
+    revalidate: 60,
   };
 }
 

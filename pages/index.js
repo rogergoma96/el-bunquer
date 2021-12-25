@@ -47,6 +47,7 @@ export async function getStaticProps() {
       lastEpisodes,
       seasons: seasons.data,
     },
+    revalidate: 60,
   };
 }
 
