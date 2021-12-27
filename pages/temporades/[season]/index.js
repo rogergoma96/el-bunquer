@@ -6,8 +6,8 @@ import client from "../../../lib/apollo/apollo";
 import { menuSections } from "../../api/menu";
 import { getSeasons } from "../../api/seasons";
 
-const Season = ({ menuSections, season }) => (
-  <Layout menuSections={menuSections}>
+const Season = ({ menu, season }) => (
+  <Layout menuSections={menu}>
     <Head>
       <title>El bunquer | Season</title>
       <meta name="description" content="El bunquer" />
@@ -17,16 +17,15 @@ const Season = ({ menuSections, season }) => (
 );
 
 export async function getStaticPaths() {
-  const seasonsPromise = getSeasons({ client });
-  const seasons = await seasonsPromise;
+  const seasons = await getSeasons({ client });
 
   const paths = seasons.map((season) => ({
     params: {
-      season: season.attributes.season,
+      season: season.attributes?.season,
     },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params: { season } }) {
@@ -36,7 +35,7 @@ export async function getStaticProps({ params: { season } }) {
   return {
     props: {
       season,
-      menuSections,
+      menu: menuSections,
     },
     revalidate: 60,
   };

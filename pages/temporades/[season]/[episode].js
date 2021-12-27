@@ -33,7 +33,7 @@ export async function getStaticPaths() {
   const paths = allEpisodes.map((episode) => ({
     params: {
       episode: episode.attributes.canonicalUrl,
-      season: episode.attributes?.season?.data?.attributes?.season || "0",
+      season: episode.attributes?.season?.data?.attributes?.season,
     },
   }));
 
