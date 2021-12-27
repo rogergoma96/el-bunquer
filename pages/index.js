@@ -1,51 +1,36 @@
 import Head from "next/head";
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+
+import client from "../lib/apollo/apollo";
 
 import Layout from "../components/common/Layout/Layout";
 import Home from "../components/pages/Home/Home";
-// import { getLastEpisodes, getMenuSections } from "../services";
+
 import { menuSections } from "./api/menu";
 import { getLastEpisodes } from "./api/last-episodes";
 
 const HomePage = ({ menuSections, lastEpisodes }) => (
   <Layout menuSections={menuSections}>
     <Head>
-      <title>El Búnquer</title>
-      <meta name="description" content="El bunquer" />
+      <title>El Búnquer | Catalunya Ràdio</title>
+      <meta
+        name="description"
+        content="Un programa de denúncia social a través de les notes de veu dels oients, que dona a conèixer els personatges històrics més desgraciats del planeta, la cara B dels llibres d'història, gent que també mereix ser homenatjada. Biografies explicades per en Peyu i teatralitzades per en Jair."
+      />
     </Head>
     <Home lastEpisodes={lastEpisodes} />
   </Layout>
 );
 
 export async function getStaticProps() {
-  const client = new ApolloClient({
-    uri: "https://el-bunquer-cms.herokuapp.com/graphql",
-    cache: new InMemoryCache(),
-  });
-
-  const {
-    data: { seasons },
-  } = await client.query({
-    query: gql`
-      query getSeasons {
-        seasons {
-          data {
-            attributes {
-              season
-            }
-          }
-        }
-      }
-    `,
-  });
-
-  const lastEpisodes = await getLastEpisodes({ client });
+  // TODO: SEO
+  // TODO: MENU
+  const lastEpisodesPromise = getLastEpisodes({ client });
+  const lastEpisodes = await lastEpisodesPromise;
 
   return {
     props: {
       menuSections,
       lastEpisodes,
-      seasons: seasons.data,
     },
     revalidate: 60,
   };

@@ -30,13 +30,23 @@ const Menu = ({ sections }) => {
           {sections.map((section) => (
             <li key={section.title} className={styles.section}>
               <Link href={section.href}>
-                <a className="text-title-s">{section.title}</a>
+                <a
+                  onClick={() => setShowMenu(!showMenu)}
+                  className="text-title-s"
+                >
+                  {section.title}
+                </a>
               </Link>
               {section.links && (
                 <div className={styles.subsections}>
                   {section.links.map((links) => (
                     <Link key={links.title} href={links.href}>
-                      <a className={styles.subsection}>{links.title}</a>
+                      <a
+                        onClick={() => setShowMenu(!showMenu)}
+                        className={styles.subsection}
+                      >
+                        {links.title}
+                      </a>
                     </Link>
                   ))}
                 </div>
