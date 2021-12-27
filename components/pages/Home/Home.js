@@ -13,8 +13,8 @@ const Home = ({ lastEpisodes }) => (
     <div className={styles.content}>
       <LastEpisodes lastEpisodes={lastEpisodes} />
       <Description />
-      <Team />
       <Spectators />
+      <Team />
       <Sponsors />
     </div>
   </>

@@ -4,6 +4,13 @@ import styles from "./Team.module.css";
 
 const Team = () => (
   <section className={styles.container}>
+    <Image
+      src="/images/equip.jpg"
+      className={styles.image}
+      alt="La Neus, en Peyu i en Jair amb auriculars de radio"
+      width="670"
+      height="387"
+    />
     <div className={styles.texts}>
       <h2 className={`text-title-l ${styles.title}`}>Equip</h2>
       <div className="text-body">
@@ -67,13 +74,6 @@ const Team = () => (
         </p>
       </div>
     </div>
-    <Image
-      src="/images/equip.jpg"
-      className={styles.image}
-      alt="La Neus, en Peyu i en Jair amb auriculars de radio"
-      width="670"
-      height="387"
-    />
   </section>
 );
 

@@ -4,13 +4,6 @@ import styles from "./Spectators.module.css";
 
 const Spectators = () => (
   <section className={styles.container}>
-    <Image
-      src="/images/public.jpg"
-      className={styles.image}
-      alt="Imatge del bunquer amb les cadires del públic"
-      width="670"
-      height="387"
-    />
     <div className={styles.texts}>
       <h2 className={`text-title-l ${styles.title}`}>Vols venir de públic?</h2>
       <p className="text-body">
@@ -29,6 +22,13 @@ const Spectators = () => (
         pregunta, recitant un poema… el que més et vingui de gust!
       </p>
     </div>
+    <Image
+      src="/images/public.jpg"
+      className={styles.image}
+      alt="Imatge del bunquer amb les cadires del públic"
+      width="670"
+      height="387"
+    />
   </section>
 );
 

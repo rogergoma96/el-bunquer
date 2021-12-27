@@ -9,6 +9,7 @@
 .sponsor {
   max-height: 80px;
   max-width: calc(100vw / 6);
+  
 }
 
 @media (max-width: 800px) {

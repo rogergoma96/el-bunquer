@@ -1,5 +1,4 @@
 .image {
-  margin-right: 64px;
   width: 40%;
 }
 
@@ -7,12 +6,12 @@
   display: flex;
   align-items: center;
   margin: 0 64px 128px;
-  justify-content: flex-end;
 }
 
 .texts {
   text-align: justify;
   min-width: 40%;
+  margin-left: 64px;
 }
 
 .strong {
