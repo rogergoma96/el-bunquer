@@ -17,8 +17,8 @@ const EpisodeDetailPage = ({ menuSections, episodeDetail, lastEpisodes }) => {
   return (
     <Layout menuSections={menuSections}>
       <Head>
-        <title>{episodeDetail.pageTitle}</title>
-        <meta name="description" content={episodeDetail.pageDescription} />
+        <title>{episodeDetail.name} | El bunquer</title>
+        <meta name="description" content={episodeDetail.description} />
       </Head>
       <EpisodeDetail
         lastEpisodes={lastEpisodes}
