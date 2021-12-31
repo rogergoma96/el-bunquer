@@ -3,7 +3,6 @@
   cursor: pointer;
   text-decoration: none;
   color: var(--color-black);
-  max-width: calc(100% / 5);
 }
 
 .image {
@@ -27,19 +26,6 @@
 
 .title {
   padding-right: 16px;
-}
-
-@media (max-width: 1200px) {
-  .link {
-    min-width: calc(100vw / 3);
-    max-width: auto;
-  }
-}
-
-@media (max-width: 800px) {
-  .link {
-    min-width: calc(100vw / 2);
-  }
 }
 
 

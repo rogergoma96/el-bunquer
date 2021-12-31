@@ -1,9 +1,9 @@
 import Head from "next/head";
+import client from "../../../lib/apollo/apollo";
 
 import Layout from "../../../components/common/Layout/Layout";
 import EpisodeDetail from "../../../components/pages/EpisodeDetail/EpisodeDetail";
 
-import client from "../../../lib/apollo/apollo";
 import { menuSections } from "../../api/menu";
 import { getLastEpisodes } from "../../api/last-episodes";
 import { getEpisodeDetail } from "../../api/episodes/[season]/[episode]";

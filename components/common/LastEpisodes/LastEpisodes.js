@@ -18,8 +18,8 @@ const LastEpisodes = ({ lastEpisodes = [] }) => {
             coverImage={episode.attributes?.coverImg}
             tags={episode.attributes?.tags}
             season={episode.attributes?.season || 1}
-            url={episode.attributes?.canonicalUrl}
-            episodeNumber={episode.attributes?.programNumber}
+            canonicalUrl={episode.attributes?.canonicalUrl}
+            programNumber={episode.attributes?.programNumber}
           />
         ))}
       </div>

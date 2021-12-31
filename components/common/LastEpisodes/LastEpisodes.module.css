@@ -16,6 +16,10 @@
   overflow: auto;
 }
 
+.episodes > * {
+  max-width: calc(100% / 5);
+}
+
 .episodes::-webkit-scrollbar {
   display: none;
 }
@@ -24,5 +28,18 @@
   .title,
   .episodes {
     padding: 0 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .episodes > * {
+    min-width: calc(100vw / 3);
+    max-width: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .episodes > * {
+    min-width: calc(100vw / 2);
   }
 }

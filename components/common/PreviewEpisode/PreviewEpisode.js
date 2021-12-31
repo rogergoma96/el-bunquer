@@ -3,16 +3,22 @@ import Image from "next/image";
 
 import styles from "./PreviewEpisode.module.css";
 
-const PreviewEpisode = ({ title, coverImage, season, url, episodeNumber }) => {
+const PreviewEpisode = ({
+  title,
+  coverImage,
+  season,
+  canonicalUrl,
+  programNumber,
+}) => {
   const getFormatedTag = () => {
-    let episode = episodeNumber;
+    let episode = programNumber;
     let seasonNumber = season;
 
-    if (episode.toString().length <= 1) {
-      episode = `0${episodeNumber}`;
+    if (episode?.toString().length <= 1) {
+      episode = `0${programNumber}`;
     }
 
-    if (season.toString().length <= 1) {
+    if (season?.toString().length <= 1) {
       seasonNumber = `0${season}`;
     }
 
@@ -22,8 +28,8 @@ const PreviewEpisode = ({ title, coverImage, season, url, episodeNumber }) => {
   const tag = getFormatedTag();
 
   return (
-    <Link href={`/temporades/${season}/${url}`}>
-      <a className={styles.link} href={`/temporades/${season}/${url}`}>
+    <Link href={`/temporades/${season}/${canonicalUrl}`}>
+      <a className={styles.link} href={`/temporades/${season}/${canonicalUrl}`}>
         <Image
           alt={title}
           src={coverImage?.data?.attributes?.url || "/images/portada.jpg"}

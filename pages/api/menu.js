@@ -1,17 +1,11 @@
 export const menuSections = [
   {
-    title: "Episodis",
-    href: "/temporades",
-    links: [
-      {
-        title: "Temporada 1",
-        href: "/temporades/1",
-      },
-      {
-        title: "Temporada 2",
-        href: "/temporades/2",
-      },
-    ],
+    title: "Temporada 1",
+    href: "/temporades/1",
+  },
+  {
+    title: "Temporada 2",
+    href: "/temporades/2",
   },
 ];
 

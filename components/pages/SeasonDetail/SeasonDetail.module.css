@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 64px;
+}
+
+.season {
+  margin-bottom: 16px;
+}
+
+.episodes {
+  display: grid;
+  gap: 16px;
+  grid-auto-rows: 320px;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
