@@ -14,3 +14,29 @@
   grid-auto-rows: 320px;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 }
+
+@media (max-width: 800px) {
+  .container {
+    padding: 64px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 32px 16px;
+  }
+
+  .season {
+    margin-bottom: 16px;
+  }
+  
+  .episodes {
+    grid-auto-rows: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .episodes {
+    grid-auto-rows: 280px;
+  }
+}

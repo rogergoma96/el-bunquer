@@ -29,6 +29,7 @@ export async function getStaticProps() {
       seasons,
       menuSections,
     },
+    revalidate: 60,
   };
 }
 

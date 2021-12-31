@@ -34,7 +34,6 @@ export async function getStaticProps({ params: { season } }) {
   // TODO: Menú
 
   const episodesPromise = getAllSeasonEpisodes({ client, season });
-
   const episodes = await episodesPromise;
 
   return {
