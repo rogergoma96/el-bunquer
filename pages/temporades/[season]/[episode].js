@@ -37,7 +37,7 @@ export async function getStaticPaths() {
     },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params: { episode } }) {

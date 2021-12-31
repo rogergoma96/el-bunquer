@@ -11,7 +11,7 @@ import SeasonDetail from "../../../components/pages/SeasonDetail/SeasonDetail";
 const Season = ({ menu, season, episodes }) => (
   <Layout menuSections={menu}>
     <Head>
-      <title>El bunquer | Season</title>
+      <title>Temporada {season} | El bunquer</title>
       <meta name="description" content="El bunquer" />
     </Head>
     <SeasonDetail season={season} episodes={episodes} />
@@ -27,7 +27,7 @@ export async function getStaticPaths() {
     },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params: { season } }) {
