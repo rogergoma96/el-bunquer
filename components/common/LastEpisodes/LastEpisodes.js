@@ -15,7 +15,7 @@ const LastEpisodes = ({ lastEpisodes = [] }) => {
           <PreviewEpisode
             key={episode.attributes?.title}
             title={episode.attributes?.title}
-            coverImage={episode.attributes?.coverImg}
+            coverImg={episode.attributes?.coverImg}
             tags={episode.attributes?.tags}
             season={episode.attributes?.season || 1}
             canonicalUrl={episode.attributes?.canonicalUrl}

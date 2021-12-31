@@ -5,7 +5,7 @@ import styles from "./PreviewEpisode.module.css";
 
 const PreviewEpisode = ({
   title,
-  coverImage,
+  coverImg,
   season,
   canonicalUrl,
   programNumber,
@@ -32,10 +32,10 @@ const PreviewEpisode = ({
       <a className={styles.link} href={`/temporades/${season}/${canonicalUrl}`}>
         <Image
           alt={title}
-          src={coverImage?.data?.attributes?.url || "/images/portada.jpg"}
+          src={coverImg?.data?.attributes?.url || "/images/portada.jpg"}
           layout="responsive"
-          width={coverImage?.data?.attributes?.width || "1200px"}
-          height={coverImage?.data?.attributes?.height || "675px"}
+          width={coverImg?.data?.attributes?.width || "1200px"}
+          height={coverImg?.data?.attributes?.height || "675px"}
           className={styles.image}
         />
         <div className={`text-action ${styles.tags}`}>
