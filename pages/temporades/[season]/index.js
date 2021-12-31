@@ -27,7 +27,7 @@ export async function getStaticPaths() {
     },
   }));
 
-  return { paths, fallback: "blocking" };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params: { season } }) {
