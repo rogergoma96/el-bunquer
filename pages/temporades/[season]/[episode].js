@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import client from "../../../lib/apollo/apollo";
 
 import Layout from "../../../components/common/Layout/Layout";
@@ -33,7 +34,7 @@ export async function getStaticPaths() {
   const paths = allEpisodes.map((episode) => ({
     params: {
       episode: episode.attributes.canonicalUrl,
-      season: episode.attributes?.season?.data?.attributes?.season,
+      season: episode.attributes?.season?.data?.attributes?.season || "1",
     },
   }));
 

@@ -5,4 +5,14 @@ module.exports = {
     loader: "default",
     domains: ["res.cloudinary.com"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/admin",
+        destination: process.env.STRAPI_ADMIN_URL,
+        permanent: true,
+        basePath: false,
+      },
+    ];
+  },
 };

@@ -8,7 +8,7 @@ import SeasonsList from "../../components/pages/SeasonsList/SeasonsList";
 
 import { menuSections } from "../api/menu";
 
-const Seasons = ({ seasons, menuSections }) => (
+const SeasonsPage = ({ seasons, menuSections }) => (
   <Layout menuSections={menuSections}>
     <Head>
       <title>Temporades | El Búnquer</title>
@@ -33,4 +33,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Seasons;
+export default SeasonsPage;
