@@ -3,19 +3,18 @@ import Head from "next/head";
 import { getSeasons } from "../api/seasons";
 import client from "../../lib/apollo/apollo";
 
-import Layout from "../../components/common/Layout/Layout";
 import SeasonsList from "../../components/pages/SeasonsList/SeasonsList";
 
 import { menuSections } from "../api/menu";
 
 const SeasonsPage = ({ seasons, menuSections }) => (
-  <Layout menuSections={menuSections}>
+  <>
     <Head>
       <title>Temporades | El Búnquer</title>
       <meta name="description" content="Temporades del Búnquer" />
     </Head>
     <SeasonsList seasons={seasons} />
-  </Layout>
+  </>
 );
 
 export async function getStaticProps() {

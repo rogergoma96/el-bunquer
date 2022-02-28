@@ -2,14 +2,13 @@ import Head from "next/head";
 
 import client from "../lib/apollo/apollo";
 
-import Layout from "../components/common/Layout/Layout";
 import Home from "../components/pages/Home/Home";
 
 import { menuSections } from "./api/menu";
 import { getLastEpisodes } from "./api/last-episodes";
 
 const HomePage = ({ menuSections, lastEpisodes }) => (
-  <Layout menuSections={menuSections}>
+  <>
     <Head>
       <title>El Búnquer | Catalunya Ràdio</title>
       <meta
@@ -18,7 +17,7 @@ const HomePage = ({ menuSections, lastEpisodes }) => (
       />
     </Head>
     <Home lastEpisodes={lastEpisodes} />
-  </Layout>
+  </>
 );
 
 export async function getStaticProps() {

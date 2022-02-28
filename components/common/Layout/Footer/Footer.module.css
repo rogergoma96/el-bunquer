@@ -1,30 +1,28 @@
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--color-red);
   color: var(--color-white);
-  padding: 32px 64px;
+  padding: 24px 64px;
 }
 
-.sections {
+.socialMedias {
+  display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  height: 100%;
-  align-items: center;
-  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
 }
 
-.subsections {
-  display: flex;
-  flex-direction: column;
-  margin: 16px;
-}
-
-.subsection {
-  margin-bottom: 8px;
+.socialMedia svg {
+  height: 24px;
+  width: 24px;
 }
 
 @media (max-width: 500px) {
   .footer {
-    padding: 32px 16px;
+    padding: 24px 16px;
   }
 }

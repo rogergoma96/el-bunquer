@@ -2,7 +2,6 @@ import Head from "next/head";
 
 import client from "../../../lib/apollo/apollo";
 
-import Layout from "../../../components/common/Layout/Layout";
 import SeasonDetail from "../../../components/pages/SeasonDetail/SeasonDetail";
 
 import { menuSections } from "../../api/menu";
@@ -10,13 +9,13 @@ import { getSeasons } from "../../api/seasons";
 import { getAllSeasonEpisodes } from "../../api/episodes/[season]";
 
 const SeasonPage = ({ menu, season, episodes }) => (
-  <Layout menuSections={menu}>
+  <>
     <Head>
       <title>Temporada {season} | El bunquer</title>
       <meta name="description" content="El bunquer" />
     </Head>
     <SeasonDetail season={season} episodes={episodes} />
-  </Layout>
+  </>
 );
 
 export async function getStaticPaths() {

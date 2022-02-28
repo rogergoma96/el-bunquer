@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useState } from "react";
-import CloseIcon from "../../../Icons/CloseIcon/CloseIcon";
 
-import MenuIcon from "../../../Icons/MenuIcon/MenuIcon";
+import CloseIcon from "../../../Icons/CloseIcon";
+import MenuIcon from "../../../Icons/MenuIcon";
 
 import styles from "./Menu.module.css";
 
