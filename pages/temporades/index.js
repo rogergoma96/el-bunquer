@@ -5,9 +5,7 @@ import client from "../../lib/apollo/apollo";
 
 import SeasonsList from "../../components/pages/SeasonsList/SeasonsList";
 
-import { menuSections } from "../api/menu";
-
-const SeasonsPage = ({ seasons, menuSections }) => (
+const SeasonsPage = ({ seasons }) => (
   <>
     <Head>
       <title>Temporades | El Búnquer</title>
@@ -18,15 +16,12 @@ const SeasonsPage = ({ seasons, menuSections }) => (
 );
 
 export async function getStaticProps() {
-  // TODO: MENU
-  // TODO: SEO
   const seasonsPromise = getSeasons({ client });
   const seasons = await seasonsPromise;
 
   return {
     props: {
       seasons,
-      menuSections,
     },
     revalidate: 60,
   };

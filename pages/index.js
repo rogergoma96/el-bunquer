@@ -4,10 +4,9 @@ import client from "../lib/apollo/apollo";
 
 import Home from "../components/pages/Home/Home";
 
-import { menuSections } from "./api/menu";
 import { getLastEpisodes } from "./api/last-episodes";
 
-const HomePage = ({ menuSections, lastEpisodes }) => (
+const HomePage = ({ lastEpisodes }) => (
   <>
     <Head>
       <title>El Búnquer | Catalunya Ràdio</title>
@@ -21,14 +20,11 @@ const HomePage = ({ menuSections, lastEpisodes }) => (
 );
 
 export async function getStaticProps() {
-  // TODO: SEO
-  // TODO: MENU
   const lastEpisodesPromise = getLastEpisodes({ client });
   const lastEpisodes = await lastEpisodesPromise;
 
   return {
     props: {
-      menuSections,
       lastEpisodes,
     },
     revalidate: 60,

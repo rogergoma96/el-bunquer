@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
-
 import Menu from "./Menu/Menu";
 import Logo from "./Logo/Logo";
 
 import styles from "./Header.module.css";
 
-const Header = ({ menuSections }) => (
+const Header = ({ menuItems }) => (
   <header className={styles.container}>
     <Logo />
-    <Menu sections={menuSections} />
+    <Menu menuItems={menuItems} />
   </header>
 );
 

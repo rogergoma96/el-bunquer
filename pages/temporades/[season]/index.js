@@ -4,11 +4,10 @@ import client from "../../../lib/apollo/apollo";
 
 import SeasonDetail from "../../../components/pages/SeasonDetail/SeasonDetail";
 
-import { menuSections } from "../../api/menu";
 import { getSeasons } from "../../api/seasons";
 import { getAllSeasonEpisodes } from "../../api/episodes/[season]";
 
-const SeasonPage = ({ menu, season, episodes }) => (
+const SeasonPage = ({ season, episodes }) => (
   <>
     <Head>
       <title>Temporada {season} | El bunquer</title>
@@ -31,15 +30,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { season } }) {
-  // TODO: Menú
-
   const episodesPromise = getAllSeasonEpisodes({ client, season });
   const episodes = await episodesPromise;
 
   return {
     props: {
       season,
-      menu: menuSections,
       episodes,
     },
     revalidate: 60,

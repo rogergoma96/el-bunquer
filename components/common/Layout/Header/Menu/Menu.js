@@ -6,10 +6,10 @@ import MenuIcon from "../../../Icons/MenuIcon";
 
 import styles from "./Menu.module.css";
 
-const Menu = ({ sections }) => {
+const Menu = ({ menuItems }) => {
   const [showMenu, setShowMenu] = useState(null);
 
-  if (!sections) {
+  if (!menuItems) {
     return null;
   }
 
@@ -27,7 +27,7 @@ const Menu = ({ sections }) => {
           <CloseIcon />
         </button>
         <ul className={styles.sections}>
-          {sections.map((section) => (
+          {menuItems.map((section) => (
             <li key={section.title} className={styles.section}>
               <Link href={section.href}>
                 <a

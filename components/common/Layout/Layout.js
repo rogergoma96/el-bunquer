@@ -3,11 +3,11 @@ import Header from "./Header/Header";
 
 import styles from "./Layout.module.css";
 
-const Layout = ({ children, menuSections }) => (
+const Layout = ({ menuItems, children }) => (
   <>
-    <Header menuSections={menuSections} />
+    <Header menuItems={menuItems} />
     <main className={styles.main}>{children}</main>
-    <Footer menuSections={menuSections} />
+    <Footer />
   </>
 );
 

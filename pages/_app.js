@@ -1,15 +1,19 @@
 import Layout from "../components/common/Layout/Layout";
+import client from "../lib/apollo/apollo";
 
-import { menuSections } from "./api/menu";
+import { getNavigationMenu } from "./api/menu";
 
 import "../styles/styles.css";
 
-function MyApp({ Component, pageProps }) {
-  return (
-    <Layout menuSections={menuSections}>
-      <Component {...pageProps} />
-    </Layout>
-  );
-}
+const MyApp = ({ Component, pageProps, menuItems }) => (
+  <Layout menuItems={menuItems}>
+    <Component {...pageProps} />
+  </Layout>
+);
+
+MyApp.getInitialProps = async () => {
+  const menuItems = await getNavigationMenu({ client });
+  return { menuItems };
+};
 
 export default MyApp;

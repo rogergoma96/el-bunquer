@@ -2,10 +2,8 @@ import Head from "next/head";
 
 import client from "../../../lib/apollo/apollo";
 
-import Layout from "../../../components/common/Layout/Layout";
 import EpisodeDetail from "../../../components/pages/EpisodeDetail/EpisodeDetail";
 
-import { menuSections } from "../../api/menu";
 import { getLastEpisodes } from "../../api/last-episodes";
 import { getEpisodeDetail } from "../../api/episodes/[season]/[episode]";
 import { getAllEpisodes } from "../../api/episodes";
@@ -42,8 +40,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { episode } }) {
-  // TODO: SEO
-  // TODO: Menú
   const episodeDetailPromise = getEpisodeDetail({ client, episode });
   const lastEpisodesPromise = getLastEpisodes({ client });
 
@@ -54,7 +50,6 @@ export async function getStaticProps({ params: { episode } }) {
     props: {
       lastEpisodes,
       episodeDetail,
-      menuSections,
     },
     revalidate: 60,
   };
