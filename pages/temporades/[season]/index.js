@@ -38,7 +38,6 @@ export async function getStaticProps({ params: { season } }) {
       season,
       episodes,
     },
-    revalidate: 60,
   };
 }
 

@@ -32,15 +32,6 @@
   flex-direction: column;
 }
 
-.subsections {
-  display: flex;
-  flex-direction: column;
-}
-
-.subsection {
-  padding: 8px 16px;
-}
-
 .menu {
   position: fixed;
   top: 0;

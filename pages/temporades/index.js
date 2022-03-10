@@ -23,7 +23,6 @@ export async function getStaticProps() {
     props: {
       seasons,
     },
-    revalidate: 60,
   };
 }
 

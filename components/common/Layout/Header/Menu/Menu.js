@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
 
 import CloseIcon from "../../../Icons/CloseIcon";
 import MenuIcon from "../../../Icons/MenuIcon";
@@ -37,20 +37,6 @@ const Menu = ({ menuItems }) => {
                   {section.title}
                 </a>
               </Link>
-              {section.links && (
-                <div className={styles.subsections}>
-                  {section.links.map((links) => (
-                    <Link key={links.title} href={links.href}>
-                      <a
-                        onClick={() => setShowMenu(!showMenu)}
-                        className={styles.subsection}
-                      >
-                        {links.title}
-                      </a>
-                    </Link>
-                  ))}
-                </div>
-              )}
             </li>
           ))}
         </ul>
