@@ -27,7 +27,6 @@ export async function getStaticProps() {
     props: {
       lastEpisodes,
     },
-    revalidate: 60,
   };
 }
 

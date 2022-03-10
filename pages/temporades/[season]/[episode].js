@@ -8,6 +8,8 @@ import { getLastEpisodes } from "../../api/last-episodes";
 import { getEpisodeDetail } from "../../api/episodes/[season]/[episode]";
 import { getAllEpisodes } from "../../api/episodes";
 
+const DEFAULT_SEASSON = "1";
+
 const EpisodeDetailPage = ({ menuSections, episodeDetail, lastEpisodes }) => {
   if (!episodeDetail) {
     return null;
@@ -32,7 +34,8 @@ export async function getStaticPaths() {
   const paths = allEpisodes.map((episode) => ({
     params: {
       episode: episode.attributes.canonicalUrl,
-      season: episode.attributes?.season?.data?.attributes?.season || "1",
+      season:
+        episode.attributes?.season?.data?.attributes?.season || DEFAULT_SEASSON,
     },
   }));
 
