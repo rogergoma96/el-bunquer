@@ -30,7 +30,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { season } }) {
-  const episodesPromise = getAllSeasonEpisodes({ client, season });
+  const episodesPromise = getAllSeasonEpisodes({
+    client,
+    season,
+    page: 1,
+  });
   const episodes = await episodesPromise;
 
   return {
@@ -38,6 +42,7 @@ export async function getStaticProps({ params: { season } }) {
       season,
       episodes,
     },
+    revalidate: 60,
   };
 }
 
